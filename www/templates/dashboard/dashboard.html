@@ -1,0 +1,197 @@
+<div >
+      <md-toolbar md-scroll-shrink class="md-toolbar no-drag">
+        <div class="md-toolbar-tools md-toolbar">
+          <md-button ng-click="sideNav()" class="md-icon-button" aria-label="More" hide-gt-md>
+            <md-icon md-svg-icon="img/dashboard/icons/bradcrum.png"></md-icon>
+          </md-button>
+          <h3>
+        <span>2do</span>
+      </h3>
+       </div>
+      </md-toolbar>
+
+  <div layout="row" layout-padding  layout-fill>
+    <md-card flex="25" class="mincardwidth md-whiteframe-9dp">
+      <md-content layout-padding class="card4color ">     
+         <div layout="row">
+                <div>
+                    <img src="img/status-weather.png" class="imgsize">
+                </div>
+                <div flex>
+                </div>      
+                <div>
+                    <p class="text-align-center font-size ">Weather</p>
+                </div>
+            </div>
+      </md-content>
+       </md-card>
+      <md-card flex="25" class="mincardwidth md-whiteframe-9dp">
+      <md-content layout-padding class="card1color">     
+               <div layout="row">
+                <div>
+                    <img src="img/staffmgmt.png" class="imgsize">
+                </div>
+                <div flex>
+                </div>      
+                <div>
+                    <p class="text-align-center font-size ">Staff Management</p>
+                </div>
+            </div>
+      </md-content>
+       </md-card>
+        <md-card flex="25" class="mincardwidth md-whiteframe-9dp">
+      <md-content layout-padding class="card3color">     
+               <div layout="row">
+                <div>
+                    <img src="img/todo.png" class="imgsize">
+                </div>
+                <div flex>
+                </div>      
+                <div>
+                    <p class="text-align-center font-size ">To-Do</p>
+                </div>
+            </div>
+      </md-content>
+       </md-card>
+        <md-card flex="25" class="mincardwidth md-whiteframe-9dp">
+      <md-content layout-padding class="card2color">     
+              <div layout="row">
+                <div>
+                    <img src="img/calendar-icon.png" class="imgsize">
+                </div>
+                <div flex>
+                </div>      
+                <div>
+                    <p class="text-align-center font-size ">Calendar</p>
+                </div>
+            </div>
+      </md-content>
+       </md-card>
+     </div>
+   <md-grid-list
+        md-cols-sm="1" md-cols-md="2" md-cols-gt-md="10"
+        md-row-height="3:3"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+    <md-grid-tile class="gray"
+        md-rowspan="5" md-colspan="2" md-colspan-sm="1">
+      <div layout="column" layout-padding  layout-fill>
+        
+    <md-card  class="md-whiteframe-6dp">
+      <md-content layout-padding class="card1color cardhover">     
+           <div layout="row">
+                <div>
+                    <img src="img/icons-dashboard.png" class="imgsize">
+                </div>
+                <div flex>
+                </div>      
+                <div>
+                    <p class="text-align-center font-size ">Dash Board</p>
+                </div>
+            </div>
+      </md-content>
+       </md-card>
+       <md-card class="md-whiteframe-6dp" >
+      <md-content layout-padding class="card3color cardhover">     
+                <div layout="row">
+                <div>
+                    <img src="img/schedule.png" class="imgsize">
+                </div>
+                <div flex>
+                </div>      
+                <div>
+                    <p class="text-align-center font-size ">New Apponiment</p>
+                </div>
+            </div>
+      </md-content>
+       </md-card>
+         <md-card  >
+      <md-content layout-padding class="card4color cardhover">     
+             <div layout="row">
+                <div>
+                    <img src="img/reminder.png" class="imgsize">
+                </div>
+                <div flex>
+                </div>      
+                <div>
+                    <p class="text-align-center font-size ">Fast Reminder</p>
+                </div>
+            </div>
+      </md-content>
+       </md-card>
+         <md-card class="md-whiteframe-6dp" >
+      <md-content layout-padding class="card2color cardhover">     
+              <div layout="row">
+                <div>
+                    <img src="img/settings.png" class="imgsize">
+                </div>
+                <div flex>
+                </div>      
+                <div>
+                    <p class="text-align-center font-size ">Settings</p>
+                </div>
+            </div>
+      </md-content>
+       </md-card>
+       
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="green"
+      md-rowspan="5" md-colspan="2" md-colspan-sm="1">
+      <md-grid-tile-header>
+        <div layout="row">
+                <div flex="65">
+                   <p class="text-align-center font-size">To-Do</p>
+                </div>
+              <div flex="75">
+              </div>
+                <div flex="15">
+                   <md-button ng-click="toDoCreate($event)" class="md-icon-button" aria-label="More">
+                      <md-icon class="mdIcon" md-svg-icon="img/dashboard/icons/add.svg"></md-icon>
+                  </md-button>
+                </div>
+            </div>
+      </md-grid-tile-header>
+    </md-grid-tile>
+      <md-grid-tile class="blue"
+      md-rowspan="5" md-colspan="2" md-colspan-sm="1">
+      <md-grid-tile-header>
+        <div layout="row">
+                <div flex="65">
+                   <p class="text-align-center font-size">Fast Reminder</p>
+                </div>
+              <div flex="30">
+              </div>
+                <div flex="15">
+                   <md-button ng-click="fastRemCreate($event)" class="md-icon-button" aria-label="More">
+                      <md-icon class="mdIcon" md-svg-icon="img/dashboard/icons/add.svg"></md-icon>
+                  </md-button>
+                </div>
+            </div>
+      </md-grid-tile-header>
+    </md-grid-tile>
+      <md-grid-tile class="purple"
+      md-rowspan="5" md-colspan="2" md-colspan-sm="1">
+      <md-grid-tile-header>
+        <div layout="row">
+                <div flex="65">
+                   <p class="text-align-center font-size">Notepad</p>
+                </div>
+              <div flex="60">
+              </div>
+                <div flex="15">
+                   <md-button ng-click="notePadCreate($event)" class="md-icon-button" aria-label="More">
+                      <md-icon class="mdIcon" md-svg-icon="img/dashboard/icons/add.svg"></md-icon>
+                  </md-button>
+                </div>
+            </div>
+      </md-grid-tile-header>
+    </md-grid-tile>
+    <md-grid-tile class="blue2"
+      md-rowspan="5" md-colspan="2" md-colspan-sm="1">
+      <md-grid-tile-header>
+        <h3>Complete</h3>
+      </md-grid-tile-header>
+    </md-grid-tile>
+  </md-grid-list>
+  
+</div>

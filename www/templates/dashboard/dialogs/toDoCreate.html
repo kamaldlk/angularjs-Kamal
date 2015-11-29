@@ -1,0 +1,241 @@
+<md-dialog aria-label="Mango (Fruit)" class="md-dialogs" ng-cloak>
+    <form name="eventForm" ng-submit="addNewEvent(newEvent)">
+        <div layout-align="start center">
+            <div class="md-padding">
+                <div layout="row">
+                    <div flex="40">
+                        <md-input-container flex md-no-float>
+                            <input type="text" ng-model="newEvent.name" placeholder="Task Short Name" required>
+                        </md-input-container>
+                    </div>
+                    <div flex="40">
+                        <md-input-container flex md-no-float>
+                            <input type="text" ng-model="newEvent.description" placeholder="Task Description" required>
+                        </md-input-container>
+                    </div>
+                    <div flex="20">
+                    </div>
+                </div>
+                <div layout="row">
+                    <div>
+                        <md-datepicker class="datepadding" ng-model="newEvent.date" md-placeholder="Enter date" md-min-date="minDate"></md-datepicker>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <label class="lablestyle">Time</label>
+                            <div layout="row">
+                                <div flex="15">
+                                    <md-input-container flex md-no-float>
+                                        <input type="number" min="1" max="12" ng-model="newEvent.time.hour" placeholder="Hour" required>
+                                    </md-input-container>
+                                </div>
+                                <div flex="15">
+                                    <md-input-container flex md-no-float>
+                                        <input type="number" min="1" max="60" ng-model="newEvent.time.minute" placeholder="Minute" required>
+                                    </md-input-container>
+                                </div>
+                                <div flex="70"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+                <div layout="row">
+                    <div flex="30">
+                        <md-input-container flex md-no-float>
+                            <label class="lablestyle">Responsible</label>
+                            <md-select name="newEvent.responsible" ng-model="myModel" class="timepadding" required>
+                                <md-option value="1">One</md-option>
+                                <md-option value="2">Two</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div flex="30">
+                        <md-input-container>
+                            <label class="lablestyle">Task Priority</label>
+                            <md-select name="newEvent.priority" ng-model="taskPriority" class="timepadding" required>
+                                <md-option value="low">Low</md-option>
+                                <md-option value="medium">Medium</md-option>
+                                <md-option value="high">High</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div flex="30">
+                        <md-input-container>
+                            <label class="lablestyle">Task Color</label>
+                            <md-select name="myModel" ng-model="newEvent.color" class="timepadding" required>
+                                <md-option value="red">Red</md-option>
+                                <md-option value="peach">Peach</md-option>
+                                <md-option value="pink">Pink</md-option>
+                                <md-option value="green">Green</md-option>
+                                <md-option value="white">White</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="30">
+                        <md-input-container flex md-no-float>
+                            <label class="lablestyle">Status</label>
+                            <md-select name="myModel" ng-model="newEvent.status" class="selectcls" required>
+                                <md-option value="Not Started">Not Started</md-option>
+                                <md-option value="Started">Started</md-option>
+                                <md-option value="Completed">Completed</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div flex="30">
+                        <md-input-container flex md-no-float>
+                            <input type="text" ng-model="newEvent.comment" placeholder="Comments">
+                        </md-input-container>
+                    </div>
+                    <div flex="30">
+
+                    </div>
+                </div>
+
+                <div layout="row">
+                    <div flex="70">
+                        <md-button ng-hide="$root.reoccurenceint" ng-click="reoccurence()" class="md-primary md-hue-1">Reoccurence</md-button>
+                        <md-card ng-show="$root.reoccurence" flex="25" style="margin-top: -45%;">
+                            <md-content layout-padding class="card4color ">
+                                <div layout="row">
+                                    <div flex="90">
+                                        <md-input-container flex md-no-float>
+                                            <input type="text" placeholder="Task Short Name">
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <p style="margin-top: -15px;">Reoccurence Pattern</p>
+
+                                <div layout="row">
+
+                                    <div flex="25">
+                                        <md-radio-group ng-model="data.group1">
+                                            <md-radio-button value="daily" class="md-primary">Daily</md-radio-button>
+                                            <md-radio-button value="weekly" class="md-primary">Weekly</md-radio-button>
+                                            <md-radio-button value="monthly" class="md-primary">Monthly</md-radio-button>
+                                            <md-radio-button value="yearly" class="md-primary">Yearly</md-radio-button>
+                                        </md-radio-group>
+                                    </div>
+                                    <div flex="75">
+                                        <md-input-container flex md-no-float>
+                                            <input type="text" placeholder="Reoccurence every 1 Week(S) on">
+                                        </md-input-container>
+                                        <div layout="row">
+                                            <div flex="30">
+                                                <md-checkbox class="md-primary" ng-model="data.cb1" aria-label="Checkbox 1">
+                                                    Sunday
+                                                </md-checkbox>
+                                                <md-checkbox class="md-primary" ng-model="data.cb1" aria-label="Checkbox 1">
+                                                    Monday
+                                                </md-checkbox>
+                                            </div>
+                                            <div flex="35">
+                                                <md-checkbox class="md-primary" ng-model="data.cb1" aria-label="Checkbox 1">
+                                                    Tuesday
+                                                </md-checkbox>
+                                                <md-checkbox class="md-primary" ng-model="data.cb1" aria-label="Checkbox 1">
+                                                    Wednesday
+                                                </md-checkbox>
+                                            </div>
+                                            <div flex="30">
+                                                <md-checkbox class="md-primary" ng-model="data.cb1" aria-label="Checkbox 1">
+                                                    Thursday
+                                                </md-checkbox>
+                                                <md-checkbox class="md-primary" ng-model="data.cb1" aria-label="Checkbox 1">
+                                                    Friday
+                                                </md-checkbox>
+                                                <md-checkbox class="md-primary" ng-model="data.cb1" aria-label="Checkbox 1">
+                                                    Saturday
+                                                </md-checkbox>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div layout="row">
+                                    <div flex="40">
+                                        <md-datepicker class="datepadding2" ng-model="myDate" md-placeholder="Start" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                                    </div>
+                                    <div flex="60">
+                                        <md-radio-group ng-model="data.group1">
+                                            <md-radio-button value="daily" class="md-primary">No end Date</md-radio-button>
+                                            <div layout="row">
+                                                <div flex="40">
+                                                    <md-radio-button value="weekly" class="md-primary">End After</md-radio-button>
+                                                </div>
+                                                <div flex="40">
+                                                    <md-input-container flex md-no-float>
+                                                        <input type="text" placeholder="Task Short Name">
+                                                    </md-input-container>
+                                                </div>
+                                            </div>
+                                            <div layout="row">
+                                                <div flex="40">
+                                                    <md-radio-button value="monthly" class="md-primary">End By</md-radio-button>
+                                                </div>
+                                                <div flex="40">
+                                                    <md-datepicker class="datepadding2" ng-model="myDate" md-placeholder="Start" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                                                </div>
+                                            </div>
+                                        </md-radio-group>
+                                    </div>
+
+                                </div>
+
+                                <div layout="row">
+                                    <div flex="80">
+                                    </div>
+                                    <div flex="10">
+                                        <md-button ng-click="aceptName()" class="md-icon-button" aria-label="More">
+                                            <md-icon md-svg-icon="img/dashboard/icons/directional.svg"></md-icon>
+                                        </md-button>
+                                    </div>
+                                    <div flex="10">
+                                        <md-button ng-click="reoccurenceCancel()" class="md-icon-button" aria-label="More">
+                                            <md-icon md-svg-icon="img/dashboard/icons/directional.svg"></md-icon>
+                                        </md-button>
+                                    </div>
+
+                                </div>
+
+                            </md-content>
+                        </md-card>
+                    </div>
+                    <!--
+                <div flex="10">
+
+                </div>
+-->
+                    <div flex="30">
+                        <md-input-container>
+                            <label class="lablestyle">Remember</label>
+                            <md-select name="myModel" ng-model="newEvent.remember" class="timepadding" required>
+                                <md-option value="true">Yes</md-option>
+                                <md-option value="false">No</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="60">
+
+                    </div>
+                    <div flex="20">
+                        <md-button style="width: 75% !important;" class="md-raised">Add toDo</md-button>
+                    </div>
+                    <div flex="20">
+                        <md-button ng-click="cancel()" style="width: 75% !important;" class="md-raised md-primary">Cancel</md-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</md-dialog>

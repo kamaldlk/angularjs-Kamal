@@ -1,0 +1,235 @@
+.bodycolor {
+    background-color: #F5F5F5;
+}
+.text-align-center {
+    text-align: center;
+}
+.mincardwidth {
+    max-width: 23% !important;
+}
+.indexpadding {
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+}
+.card1color {
+    background: #FF5722;
+    color: #FFF;
+}
+.card2color {
+    background: #00BCD4;
+    color: #FFF;
+}
+.card3color {
+    background: #3F51B5;
+    color: #FFF;
+}
+.card4color {
+    background: #009688;
+    color: #FFF;
+}
+.uiview {
+    width: 100%;
+    height: 100%;
+}
+.font-size {
+    font-size: 14px;
+}
+.blue-back {
+    height: 40px;
+    -webkit-app-region: drag;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+}
+.no-drag {
+    -webkit-app-region: drag;
+    cursor: pointer;
+}
+.mdIcon {
+    width: 15px !important;
+    height: 15px !important;
+    color: #FFF !important;
+}
+.title {
+    float: left;
+    cursor: pointer;
+}
+.tool-bar {
+    background-color: #119CDE;
+    height: 100px;
+}
+ul.titlebar {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
+ul.titlebar li {
+    display: block;
+    float: right;
+}
+ul.titlebar li.menu,
+ul.titlebar li.title {
+    float: left;
+}
+ul.titlebar li.minimize,
+ul.titlebar li.close {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+ul.titlebar li.minimize img {
+    margin-top: 6px;
+}
+ul.titlebar li.menu {
+    padding: 2px 0px;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+}
+ul.titlebar li.title {
+    color: white;
+    -webkit-app-region: no-drag;
+    font-size: 1.15em;
+    line-height: 1.9em;
+    margin: 0px;
+    margin-left: 6px;
+}
+.splash-screen {
+    display: block;
+    width: 1024px;
+    height: 626px;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    top: 0;
+}
+.loginBody {
+    position: absolute;
+    top: 0px;
+    z-index: 100000;
+    height: 100%;
+    width: 100%;
+}
+md-grid-list {
+    margin: 8px;
+}
+.gray {
+    background: #f5f5f5;
+}
+.green {
+    background: #b9f6ca;
+}
+.yellow {
+    background: #ffff8d;
+}
+.blue {
+    background: #84ffff;
+}
+.purple {
+    background: #b388ff;
+}
+.red {
+    background: #ff8a80;
+}
+.blue2 {
+    background: #B3E5FC
+}
+md-grid-tile {
+    transition: all 400ms ease-out 50ms;
+}
+.white {
+    color: #FFF;
+}
+.mincardwidth:hover,
+.mincardwidth:focus,
+.mincardwidth:active {
+    transform: scale(1.1);
+    transition-duration: 0.1s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+.cardhover:hover,
+.cardhover:focus,
+.cardhover:active {
+    transform: scale(1.1);
+    transition-duration: 0.1s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+.md-toolbar {
+    height: 48px !important;
+    max-height: 48px !important;
+    min-height: 48px !important;
+    background-color: #162C51 !important;
+}
+.imgsize {
+    width: 44px;
+    height: 44px;
+}
+.md-dialogs {
+    min-width: 80% !important;
+    max-width: 80% !important;
+    background: #FFF;
+    max-height: 95%;
+    border-radius: 0px !important;
+}
+.datepadding {
+    padding: 12px !important;
+    background-color: #FFF;
+}
+.datepadding2 {
+  
+    background-color: transparent;
+}
+.timepadding {
+    padding: 7px !important;
+    width: 80% !important;
+    margin-top: -15px;
+}
+.selectcls {
+    margin-top: -21px;
+    padding: 7px !important;
+    width: 80% !important;
+}
+.fastDialog {
+    min-width: 60% !important;
+    max-width: 80% !important;
+    background: #FFF;
+    max-height: 100%;
+    border-radius: 0px !important;
+}
+.notesDialog {
+    min-width: 40% !important;
+    max-width: 80% !important;
+    background: #FFF;
+    max-height: 100%;
+    border-radius: 0px !important;
+}
+.add-event-home {
+    position: absolute !important;
+    right: 25px;
+    top: 130px;
+}
+.animate {
+    background: url(../img/02.jpg) no-repeat center center #2a2b30;
+    background-size: cover;
+    font-family: Roboto;
+    width: 100%;
+    height: 100%;
+}
+.layoutmd {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: 100%
+}
+.iconsize {
+    height: 17px !important;
+    width: 17px !important;
+}

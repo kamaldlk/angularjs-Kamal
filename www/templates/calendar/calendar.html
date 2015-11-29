@@ -1,0 +1,61 @@
+<div style="height:690px;width:1080px">
+    <md-toolbar style="height:166px;background-color:#EF6C00" layout="row">
+            <div flex>
+                <h3 style="margin:25px">Hi</h3> <h4 style="margin-top:-25px;margin-left:25px">{{calendar.userName}}</h4>
+            </div>
+            <div class="month-nav" layout='row' style="margin:auto;width:400px;">
+                    <md-button class="md-icon-button" ng-click='calendar.prevMonth()'>
+                        <md-icon aria-label='Previous month' md-menu-origin md-svg-icon="img/leftArrow.svg"></md-icon>
+                    </md-button>
+                    <div flex></div>
+                    <div layout="column" style="height:80px;text-align:center">
+                        <h2 class='calendar-md-title' flex="80" style="margin:auto"><span>{{ calendar.start | date:'MMMM y'}}</span></h2>    
+                        <date-time flex="20" style="font-size:30px"></date-time>
+                    </div>
+                    <div flex></div>
+                    <md-button class="md-icon-button" ng-click='calendar.nextMonth()'>
+                        <md-icon aria-label='Next month' md-menu-origin md-svg-icon="img/rightArrow.svg"></md-icon>
+                    </md-button>
+            </div>
+            <div flex>
+                
+            </div>
+            <md-button class="md-fab" style="position:absolute;right:25px;top:130px" ng-click="calendar.createNewEvent()">
+                <md-icon md-svg-src="img/add.svg"></md-icon>
+            </md-button>
+    </md-toolbar>
+    <calendar-md flex layout layout-fill calendar-direction="direction" on-prev-month="prevMonth" on-next-month="nextMonth" on-day-click="dayClick" title-format="'MMMM y'" ng-model='selectedDate' day-format="'d'" day-label-format="'EEE'" day-label-tooltip-format="'EEEE'" day-tooltip-format="'fullDate'" week-starts-on="firstDayOfWeek" day-content="setDayContent" template-url="'templates/calendar/calendarTemplate.html'"></calendar-md>
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+        <md-content layout-padding style="height:86%">
+            <md-subheader>
+                <h2>{{currentDay.date}}</h2>&nbsp;Events List
+                <md-button class="md-icon-button" ng-click='calendar.createNewEvent()' style="float:right;margin-top:-42px">
+                    <md-icon md-svg-icon="img/addNewEvent.svg"></md-icon>
+                </md-button>
+            </md-subheader>
+            <div class="event-list">
+                <md-card ng-repeat="event in currentDay.events" ng-class="{mdWhiteframe24dp:cardHover}" ng-mouseover="cardHover=true" ng-mouseleave="cardHover=false">
+                    <md-card-content>
+                        <div class="event-title" layout="row">
+                            <h3 style="margin:auto">{{event.title}}</h3>
+                            <span flex></span>
+                            <div>
+                                <img src="img/close.png" height="20px" width="20px" ng-mouseover="close_enable = true" ng-hide="close_enable">
+                                <img src="img/close-active.png" ng-click="calendar.closeEvent(event.id)" height="20px" width="20px" ng-mouseleave="close_enable = false" ng-show="close_enable">
+                                <md-tooltip>
+                                    Close event
+                                </md-tooltip>
+                            </div>
+                        </div>
+                        <div layout="column">
+                            <span>{{event.describtion}}</span>
+                            <br/>
+                            <span>Timing : &nbsp;{{event.startTime}} &nbsp; - &nbsp; {{event.endTime}}</span>
+                            <span>Status : &nbsp;{{event.status}}</span>
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </md-content>
+    </md-sidenav>
+</div>

@@ -1,0 +1,66 @@
+<md-dialog aria-label="Mango (Fruit)" class="fastDialog" ng-cloak>
+    <div layout-align="start center">
+        <div class="md-padding">
+            <div layout="row">
+                <div flex>
+                    <md-input-container flex md-no-float>
+                        <input type="text" placeholder="Task Short Name"  style="width: 50% !impo;">
+                    </md-input-container>
+                </div>
+               
+            </div>
+            <div layout="row">
+                <div>
+                    <md-datepicker class="datepadding" ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                </div>
+                <div flex>
+                    <md-input-container>
+                        <label class="lablestyle">Time</label>
+                        <md-select name="myModel" ng-model="myModel" class="timepadding">
+                            <md-option value="1">One</md-option>
+                            <md-option value="2">Two</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+            <div layout="row">
+                <div flex="30">
+                    <md-input-container flex md-no-float>
+                        <label class="lablestyle">Reoccurence</label>
+                        <md-select name="myModel" ng-model="reoccurence" class="timepadding">
+                            <md-option value="1">One</md-option>
+                            <md-option value="2">Two</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div flex="30">
+
+                </div>
+                <div flex="30">
+                    <md-input-container>
+                        <label class="lablestyle">Reminder</label>
+                        <md-select name="myModel" ng-model="reminder" class="timepadding">
+                            <md-option value="1">One</md-option>
+                            <md-option value="2">Two</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="60">
+
+                </div>
+                <div flex="20">
+                    <md-button style="width: 75% !important;" class="md-raised">Add toDo</md-button>
+                </div>
+                <div flex="20">
+                    <md-button style="width: 75% !important;" class="md-raised md-primary">Cancel</md-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</md-dialog>

@@ -1,0 +1,34 @@
+<style>
+    .highlight {
+        background: #ffa726 !important
+    }
+</style>
+<md-card layout='column' flex style="height:507px">
+    <md-content layout='column' layout-fill flex md-swipe-left='next()' md-swipe-right='prev()'>
+        
+        <!-- agenda view -->
+        <md-content style="height:0px" ng-if='weekLayout === columnWeekLayout' class='agenda'>
+            <div ng-repeat='week in calendar.weeks track by $index'>
+                <div ng-if='sameMonth(day)' ng-class='{ active: active === day }' ng-click='handleDayClick(day)' ng-repeat='day in week' layout>
+                    <md-tooltip ng-if='::tooltips()'>{{ day | date:dayTooltipFormat:timezone }}</md-tooltip>
+                    <div>{{ day | date:dayFormat:timezone }}</div>
+                    <div flex ng-bind-html='getDayContent(day)'></div>
+                </div>
+            </div>
+        </md-content>
+        <!-- calendar view -->
+        <md-content style="height:0px" ng-if='weekLayout !== columnWeekLayout' flex layout='column' class='calendar'>
+            <div layout='row' layout-fill class='subheader' style="background-color:#f1dbd3">
+                <div layout-padding class='subheader-day' flex ng-repeat='day in calendar.weeks[0]'>
+                    <md-tooltip ng-if='::tooltips()'>{{ day | date:dayLabelTooltipFormat }}</md-tooltip>{{ day | date:dayLabelFormat }}</div>
+            </div>
+            <div ng-if='week.length' ng-repeat='week in calendar.weeks track by $index' flex layout='row' layout-fill>
+                <div tabindex='{{ sameMonth(day) ? (day | date:dayFormat:timezone) : 0 }}' ng-repeat='day in week track by $index' ng-click='handleDayClick(day)' flex layout layout-padding ng-class='{&quot;disabled&quot; : ! sameMonth(day), &quot;active&quot;: isActive(day), &quot;md-whiteframe-12dp&quot;: hover || focus, highlight:sameDay(day) }' ng-focus='focus = true;' ng-blur='focus = false;' ng-mouseleave='hover = false' ng-mouseenter='hover = true'>
+                    <md-tooltip ng-if='::tooltips()'>{{ day | date:dayTooltipFormat }}</md-tooltip>
+                    <div>{{ day | date:dayFormat }}</div>
+                    <div flex ng-bind-html='data[dayKey(day)]'></div>
+                </div>
+            </div>
+        </md-content>
+    </md-content>
+</md-card>

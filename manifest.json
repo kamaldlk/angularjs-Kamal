@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "to-DO",
+    "description": "abc",
+    "version": "1.0.0.0",
+    "app": {
+        "background": {
+            "scripts": ["background.js"]
+        }
+    },
+    "icons": {
+        "128": "icon_128.jpg"
+    },
+    "permissions":[
+         "storage",
+         "alarms"
+    ]
+}
